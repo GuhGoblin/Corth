@@ -1,16 +1,18 @@
 CC = gcc
 CFLAGS = -std=c99 -g -Wall -Wextra
-
 LDFLAGS = -lm
 
 SOURCES = src/main.c
 OBJECTS = $(SOURCES:.c=.o)
 TARGET = bin/corth
 
+all: $(TARGET)
+
 $(TARGET) : $(OBJECTS)
+	@mkdir -p bin
 	$(CC) $(CFLAGS) $(SOURCE) -o $@ $^ $(LDFLAGS)
 
-.PHONY: clean
+.PHONY: clean all
 
 clean:
-	@rm -f $(TARGET) $(OBJECTS) core
+	@rm -rf bin $(OBJECTS) core
