@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-#include <stdlib>
+#include <stdlib.h>
 
 int main()
 {
@@ -36,7 +36,19 @@ int main()
 		int top = 0; 
 		if(sscanf(buffer, "%d", &number) == 1)
 		{
-			atoi(buffer);
+			int int_buffer = atoi(buffer);
+			stack[top] = int_buffer;
+			top++;
+		}
+
+		int size_of_stack = sizeof(stack)/sizeof(stack[0]);
+
+		if(strcmp(buffer, ".s") == 0)
+		{
+			for(int i = 0; i < size_of_stack; i++)
+			{
+				printf("%d ", stack[i]);
+			}
 		}
 
 		// Exits user when they type bye
