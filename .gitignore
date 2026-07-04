@@ -1,4 +1,10 @@
+# Removes bin to help make a more clean build system
 bin/
+
+# My junk vim makes
+*.un~
+*.un
+
 # Prerequisites
 *.d
 
