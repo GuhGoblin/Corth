@@ -46,7 +46,7 @@ int main()
 		{
 			if(top < 2)
 			{
-				printf("Not 2 numbers in stack!!");
+				printf("Not 2 numbers in stack.");
 			}
 
 			else
@@ -58,6 +58,25 @@ int main()
 
 				int result = b + a;
 				stack[top] = result;
+				top++;
+			}
+		}
+
+		if(strcmp(buffer, "-") == 0)
+		{
+			if (top < 2)
+			{
+				printf("Not 2 numbers in the stack.");
+			}
+
+			else
+			{
+				int a = stack[top - 1];
+				int b = stack[top - 2];
+				top = top - 2;
+
+				int sum = b - a;
+				stack[top] = sum;
 				top++;
 			}
 		}
