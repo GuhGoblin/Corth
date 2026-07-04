@@ -16,6 +16,9 @@ int main()
 	int n = 20;
 	int number;
 
+	int stack[5];
+	int top = 0; 
+
 	printf("Corth Version  %.2f\n", version);
 	printf("Type 'bye' to exit\n");
 
@@ -32,13 +35,31 @@ int main()
 			}
 		}
 			
-		int stack[5];
-		int top; 
 		if(sscanf(buffer, "%d", &number) == 1)
 		{
 			int int_buffer = atoi(buffer);
 			stack[top] = int_buffer;
 			top++;
+		}
+
+		if(strcmp(buffer, "+") == 0) 
+		{
+			if(top < 2)
+			{
+				printf("Not 2 numbers in stack!!");
+			}
+
+			else
+			{
+				int a = stack[top - 1];
+				int b = stack[top - 2];
+
+				top = top - 2;
+
+				int result = b + a;
+				stack[top] = result;
+				top++;
+			}
 		}
 
 		if(strcmp(buffer, ".s") == 0)
