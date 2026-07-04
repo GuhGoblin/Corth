@@ -41,14 +41,15 @@ int main()
 			top++;
 		}
 
-		// int size_of_stack = sizeof(stack)/sizeof(stack[top]);
-
 		if(strcmp(buffer, ".s") == 0)
 		{
+			printf("<%d> ", top);
+
 			for(int i = 0; i < top; i++)
 			{
 				printf("%d ", stack[i]);
 			}
+			printf("\n");
 		}
 		
 		// Exits user when they type bye
