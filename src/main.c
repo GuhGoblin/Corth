@@ -33,7 +33,7 @@ int main()
 		}
 			
 		int stack[5];
-		int top = 0; 
+		int top; 
 		if(sscanf(buffer, "%d", &number) == 1)
 		{
 			int int_buffer = atoi(buffer);
@@ -41,16 +41,16 @@ int main()
 			top++;
 		}
 
-		int size_of_stack = sizeof(stack)/sizeof(stack[0]);
+		// int size_of_stack = sizeof(stack)/sizeof(stack[top]);
 
 		if(strcmp(buffer, ".s") == 0)
 		{
-			for(int i = 0; i < size_of_stack; i++)
+			for(int i = 0; i < top; i++)
 			{
 				printf("%d ", stack[i]);
 			}
 		}
-
+		
 		// Exits user when they type bye
 		if (strcmp(buffer, "bye") == 0)
 		{
