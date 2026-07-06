@@ -2,7 +2,10 @@ CC = gcc
 CFLAGS = -std=c99 -g -Wall -Wextra
 LDFLAGS = -lm
 
-SOURCES = src/main.c
+SR = src/
+IN = include/
+
+SOURCES = $(SR)corth.c
 OBJECTS = $(SOURCES:.c=.o)
 TARGET = bin/corth
 
